@@ -1,0 +1,7 @@
+URxvt.scrollBar: off 
+
+xterm*foreground: #ffffff
+xterm*background: #000000
+
+!! Fix unreadable dark blue color
+*color4: #268bd2
