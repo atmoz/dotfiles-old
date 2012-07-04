@@ -185,6 +185,11 @@ bar {
 	#}
 }
 
+# colors
+client.focused          #000000 #000000 #ffffff #ffffff
+client.focused_inactive #000000 #000000 #999999 #999999
+client.unfocused        #222222 #222222 #aaaaaa #aaaaaa
+
 # color temperature
 exec --no-startup-id redshift -l 60.3:5.3 -m vidmode
 
