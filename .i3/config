@@ -29,7 +29,7 @@ bindsym $mod+Shift+Return exec /usr/bin/thunar
 bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec /usr/bin/dmenu_run -nb black -nf white -b
+bindsym $mod+d exec /usr/bin/dmenu_run -nb black -nf white -sb white -sf black -b
 
 # custom dmenu
 bindsym $mod+p exec --no-startup-id ~/bin/launch
