@@ -179,10 +179,12 @@ bar {
 	status_command i3status
 	mode hide
 
-	#colors {
-	#	background #dddddd
-	#	statusline #000000
-	#}
+	colors {
+                focused_workspace  #ffffff #ffffff #000000
+                active_workspace   #222222 #222222 #ffffff
+                inactive_workspace #000000 #000000 #ffffff
+                urgent_workspace   #800517 #800517 #ffffff
+	}
 }
 
 # colors
