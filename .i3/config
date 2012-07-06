@@ -10,7 +10,6 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
-#set $locker i3lock -i Dropbox/Photos/patterns/swbvn4a.png -t
 set $locker bin/lock.sh
 
 # font for window titles. ISO 10646 = Unicode
@@ -187,7 +186,7 @@ bar {
 	}
 }
 
-# colors
+# decoration colors
 client.focused          #000000 #000000 #ffffff #ffffff
 client.focused_inactive #000000 #000000 #999999 #999999
 client.unfocused        #222222 #222222 #aaaaaa #aaaaaa
@@ -212,3 +211,6 @@ exec --no-startup-id dropboxd
 
 # lock screen on idle
 exec --no-startup-id xautolock -time 60 -locker "$locker"
+
+# notifications
+exec --no-startup-id dunst
