@@ -10,6 +10,11 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+set $viLeft h
+set $viRight l
+set $viDown j
+set $viUp k
+
 set $locker bin/lock.sh
 
 # font for window titles. ISO 10646 = Unicode
@@ -25,7 +30,7 @@ bindsym $mod+Return exec /usr/bin/uxterm
 bindsym $mod+Shift+Return exec /usr/bin/thunar
 
 # kill focused window
-bindsym $mod+Shift+Q kill
+bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec /usr/bin/dmenu_run -nb black -nf white -sb white -sf black -b
@@ -34,28 +39,28 @@ bindsym $mod+d exec /usr/bin/dmenu_run -nb black -nf white -sb white -sf black -
 bindsym $mod+p exec --no-startup-id ~/bin/launch
 
 # lock screen
-bindsym $mod+Shift+X exec $locker
+bindsym $mod+Shift+x exec $locker
 
 # scratchpad move
-bindsym $mod+Shift+Z move scratchpad
+bindsym $mod+Shift+z move scratchpad
 
 # scratchpad show
 bindsym $mod+z scratchpad show
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+oslash focus right
+bindsym $mod+$viLeft focus left
+bindsym $mod+$viDown focus down
+bindsym $mod+$viUp focus up
+bindsym $mod+$viRight focus right
 
 # move focused window
-bindsym $mod+Shift+J move left
-bindsym $mod+Shift+K move down
-bindsym $mod+Shift+L move up
-bindsym $mod+Shift+Oslash move right
+bindsym $mod+Shift+$viLeft move left
+bindsym $mod+Shift+$viDown move down
+bindsym $mod+Shift+$viUp move up
+bindsym $mod+Shift+$viRight move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -93,25 +98,25 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+exclam move workspace 1
-bindsym $mod+Shift+quotedbl move workspace 2
-bindsym $mod+Shift+numbersign move workspace 3
-bindsym $mod+Shift+currency move workspace 4
-bindsym $mod+Shift+percent move workspace 5
-bindsym $mod+Shift+ampersand move workspace 6
-bindsym $mod+Shift+slash move workspace 7
-bindsym $mod+Shift+parenleft move workspace 8
-bindsym $mod+Shift+parenright move workspace 9
-bindsym $mod+Shift+equal move workspace 10
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+C reload
+bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+R restart
+bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+E exit
+bindsym $mod+Shift+e exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -122,16 +127,16 @@ mode "resize" {
         # more space on its left
 
 	bindsym j resize shrink left 10 px or 10 ppt
-	bindsym Shift+J resize grow   left 10 px or 10 ppt
+	bindsym Shift+$viLeft resize grow   left 10 px or 10 ppt
 
 	bindsym k resize shrink down 10 px or 10 ppt
-	bindsym Shift+K resize grow   down 10 px or 10 ppt
+	bindsym Shift+$viDown resize grow   down 10 px or 10 ppt
 
 	bindsym l resize shrink up 10 px or 10 ppt
-	bindsym Shift+L resize grow   up 10 px or 10 ppt
+	bindsym Shift+$viUp resize grow   up 10 px or 10 ppt
 
 	bindsym oslash resize shrink right 10 px or 10 ppt
-	bindsym Shift+Oslash resize grow   right 10 px or 10 ppt
+	bindsym Shift+$viRight resize grow   right 10 px or 10 ppt
 
         # back to normal: Enter or Escape
 	bindsym Return mode "default"
