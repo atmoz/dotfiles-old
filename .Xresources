@@ -1,5 +1,7 @@
-#define S_base03        #002b36
-#define S_base02        #073642
+xterm*borderWidth: 0
+
+#define S_base03        #000000
+#define S_base02        #091013
 #define S_base01        #586e75
 #define S_base00        #657b83
 #define S_base0         #839496
@@ -8,7 +10,7 @@
 #define S_base3         #fdf6e3
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
-#define S_red           #dc322f
+#define S_red           #AB2927
 #define S_magenta       #d33682
 #define S_violet        #6c71c4
 #define S_blue          #268bd2
