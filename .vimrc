@@ -25,7 +25,7 @@ set listchars=tab:▸\ ,trail:⋅,nbsp:⋅,eol:¬
 set nostartofline
 set wrap
 set textwidth=79
-set colorcolumn=80
+set colorcolumn=105
 set scrolloff=5
 set backspace=indent,eol,start
 
@@ -45,7 +45,6 @@ set ruler
 
 set nocursorcolumn
 set cursorline
-set number
 set numberwidth=4
 set relativenumber
 
@@ -56,6 +55,10 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
+nmap <C-S-h> gT
+nmap <C-S-k> gT
+nmap <C-S-l> gt
+nmap <C-S-j> gt
 
 let g:user_zen_leader_key = '<leader>z'
 
@@ -65,12 +68,19 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_WinWidth = 40
 let Tlist_Close_On_Select = 1
 
+let g:ctrlp_max_height = 20
 let g:ctrlp_regexp = 1
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_dotfiles = 0
-let g:ctrlp_lazy_update = 150
+let g:ctrlp_lazy_update = 0
 let g:ctrlp_prompt_mappings = {
     \ 'PrtBS()':      ['<bs>', '<c-]>', '<c-h>'],
     \ 'PrtCurLeft()': ['<left>', '<c-^>'],
     \ }
+
+" Mark similar words
+nmap <F12> :exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))<CR>
+
+" Mark variables and function calls
+autocmd CursorMoved * exe printf('match IncSearch /\V\($\|->\|::\)\<%s\>/', escape(expand('<cword>'), '/\'))
