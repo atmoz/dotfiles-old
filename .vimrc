@@ -48,6 +48,8 @@ set cursorline
 set numberwidth=4
 set relativenumber
 
+set wrapscan
+
 let mapleader=","
 map <leader>n :NERDTreeToggle<CR>
 map <leader>t :TlistToggle<CR>
