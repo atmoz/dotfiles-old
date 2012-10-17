@@ -49,6 +49,9 @@ set numberwidth=4
 set relativenumber
 
 set wrapscan
+set ignorecase
+set smartcase
+set incsearch
 
 let mapleader=","
 map <leader>n :NERDTreeToggle<CR>
