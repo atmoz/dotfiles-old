@@ -38,7 +38,7 @@ set shiftround
 
 set wildmenu
 set wildmode=list:longest
-set wildignore=*.swp
+set wildignore=*.swp,*/public_html/assets/*
 
 set laststatus=2
 set ruler
@@ -60,10 +60,8 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
-nmap <C-S-h> gT
-nmap <C-S-k> gT
-nmap <C-S-l> gt
-nmap <C-S-j> gt
+nmap <Tab> :tabnext<CR>
+nmap <S-Tab> :tabprevious<CR>
 
 let g:user_zen_leader_key = '<leader>z'
 
