@@ -35,6 +35,7 @@ VdebugOptions-port	Vdebug.txt	/*VdebugOptions-port*
 VdebugOptions-remote_path	Vdebug.txt	/*VdebugOptions-remote_path*
 VdebugOptions-server	Vdebug.txt	/*VdebugOptions-server*
 VdebugOptions-timeout	Vdebug.txt	/*VdebugOptions-timeout*
+VdebugOptions-watch_window_style	Vdebug.txt	/*VdebugOptions-watch_window_style*
 VdebugRemote	Vdebug.txt	/*VdebugRemote*
 VdebugRemoteConnection	Vdebug.txt	/*VdebugRemoteConnection*
 VdebugRemoteFilePaths	Vdebug.txt	/*VdebugRemoteFilePaths*
@@ -47,6 +48,7 @@ VdebugSetBreakpoints-return	Vdebug.txt	/*VdebugSetBreakpoints-return*
 VdebugSetBreakpoints-watch	Vdebug.txt	/*VdebugSetBreakpoints-watch*
 VdebugSetLineBreakpoint	Vdebug.txt	/*VdebugSetLineBreakpoint*
 VdebugSetUp	Vdebug.txt	/*VdebugSetUp*
+VdebugSetUpNodejs	Vdebug.txt	/*VdebugSetUpNodejs*
 VdebugSetUpPHP	Vdebug.txt	/*VdebugSetUpPHP*
 VdebugSetUpPerl	Vdebug.txt	/*VdebugSetUpPerl*
 VdebugSetUpPython	Vdebug.txt	/*VdebugSetUpPython*
