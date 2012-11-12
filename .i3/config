@@ -41,6 +41,9 @@ bindsym $mod+p exec --no-startup-id ~/bin/launch
 # lock screen
 bindsym $mod+Shift+x exec $locker
 
+# toggle monitors
+bindsym $mod+Shift+m exec --no-startup-id ~/bin/toggle-monitor.sh
+
 # scratchpad move
 bindsym $mod+Shift+z move scratchpad
 
