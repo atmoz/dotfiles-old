@@ -1,7 +1,7 @@
 set nocompatible
 
-call pathogen#infect()
-call pathogen#helptags()
+execute pathogen#infect()
+execute pathogen#helptags()
 
 set encoding=utf-8
 filetype plugin indent on
@@ -46,7 +46,6 @@ set ruler
 set nocursorcolumn
 set cursorline
 set numberwidth=4
-set relativenumber
 
 set wrapscan
 set ignorecase
