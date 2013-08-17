@@ -6,6 +6,7 @@ execute pathogen#helptags()
 set encoding=utf-8
 filetype plugin indent on
 let g:solarized_visibility="low"
+let g:solarized_termtrans="1"
 syntax enable
 set background=dark
 colorscheme solarized
@@ -25,7 +26,6 @@ set listchars=tab:▸\ ,trail:⋅,nbsp:⋅,eol:¬
 set nostartofline
 set wrap
 set textwidth=79
-set colorcolumn=105
 set scrolloff=5
 set backspace=indent,eol,start
 
@@ -86,3 +86,6 @@ nmap <F12> :exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '
 
 " Mark variables and function calls
 autocmd CursorMoved * exe printf('match IncSearch /\V\($\|->\|::\)\<%s\>/', escape(expand('<cword>'), '/\'))
+
+" Use markdown syntax on *.md files
+au BufRead,BufNewFile *.md set filetype=markdown
