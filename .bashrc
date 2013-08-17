@@ -9,3 +9,4 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 set -o vi
+export EDITOR="vim"
