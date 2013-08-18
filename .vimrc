@@ -20,8 +20,9 @@ set lazyredraw
 set ttyfast
 set hidden
 
-set list
 set listchars=tab:▸\ ,trail:⋅,nbsp:⋅,eol:¬
+autocmd InsertEnter * set list
+autocmd InsertLeave * set nolist
 
 set nostartofline
 set wrap
