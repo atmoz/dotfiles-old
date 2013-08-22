@@ -48,9 +48,11 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # apps
+set $dmenuOptions -nb "#000508" -nf "#839496" -sb "#002b36" -sf "#268bd2" -fn "DejaVu Sans Mono-10:normal" -i -b
+bindsym $mod+d exec --no-startup-id dmenu_run $dmenuOptions
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu $dmenuOptions'
 bindsym $mod+Return exec urxvtc
 bindsym $mod+Shift+Return exec surf
-bindsym $mod+d exec --no-startup-id /usr/bin/dmenu_run -nb "#002b36" -nf "#93a1a1" -sb "#073642" -sf "#268bd2" -fn "DejaVu Sans Mono-10:normal" -b
 bindsym $mod+p exec --no-startup-id ~/bin/launch
 bindsym $mod+Shift+x exec $locker
 bindsym $mod+Shift+m exec --no-startup-id ~/bin/toggle-monitor.sh
@@ -153,22 +155,22 @@ bar {
     modifier $barMod
 
     colors {
-        background #002b36
+        background #000508
         statusline #839496
         separator #073642
 
         # color class      border  backgr. text
-        focused_workspace  #073642 #073642 #2aa198
-        active_workspace   #073642 #073642 #fdf6e3
-        inactive_workspace #002b36 #002b36 #839496
+        focused_workspace  #002b36 #002b36 #2aa198
+        active_workspace   #002b36 #002b36 #fdf6e3
+        inactive_workspace #000508 #000508 #839496
         urgent_workspace   #800517 #800517 #cb4b16
     }
 }
 
 # decoration colors     border  backgr. text    indicator
-client.focused          #073642 #073642 #2aa198 #2aa198
-client.focused_inactive #002b36 #002b36 #fdf6e3 #fdf6e3
-client.unfocused        #002b36 #002b36 #839496 #839496
+client.focused          #002b36 #002b36 #2aa198 #2aa198
+client.focused_inactive #000508 #000508 #fdf6e3 #fdf6e3
+client.unfocused        #000508 #000508 #839496 #839496
 
 
 ###############################################################################
