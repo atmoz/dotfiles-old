@@ -3,8 +3,8 @@
 ###############################################################################
 
 # modifiers
-set $mod Mod4
-set $barMod Mod1
+set $mod Mod1
+set $barMod Mod4
 
 # directions
 set $left h
@@ -81,6 +81,10 @@ bindsym $mod+v split v
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout default
+
+# Move the current workspace to the next output
+# (effectively toggles when you only have two outputs)
+bindsym $mod+x move workspace to output right
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -175,12 +179,15 @@ client.unfocused        #000508 #000508 #839496 #839496
 
 ###############################################################################
 ##  Startup apps
-###############################################################################
+########################################################################################################
 
-#exec --no-startup-id redshift -l 60.3:5.3 -m vidmode
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id dropboxd
-exec --no-startup-id xcompmgr -n
-exec --no-startup-id urxvtd -q -o -f
-exec --no-startup-id dunst
-exec --no-startup-id xautolock -time 60 -locker "$locker"
+exec --no-startup-id xrdb -merge .Xresources              # load .Xresources
+exec --no-startup-id ssh-agent                            # ssh-agent for remembering key passphrases
+exec --no-startup-id redshift -l 60.3:5.3 -m vidmode      # auto color temperature
+exec --no-startup-id wicd-client -t                       # network
+exec --no-startup-id thunar --daemon                      # faster thunar
+exec --no-startup-id xmenud --tray                        # application menu in tray
+exec --no-startup-id dropboxd                             # dropbox
+exec --no-startup-id xautolock -time 60 -locker "$locker" # lock screen when idle
+exec --no-startup-id dunst                                # notifications
+exec --no-startup-id /home/atmoz/bin/init-monitors.sh     # prepare monitors (and wallpaper)
