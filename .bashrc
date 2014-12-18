@@ -57,8 +57,10 @@ function __ps1_newline_login {
     PS1_NEWLINE_LOGIN=true
   else
     #printf '\n'
-    printf '\e[0;90m'
-    printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' '  '-'
+    line=$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' '  '-')
+    dateString=" $(date +"%F %T")"
+    printf '\e[0;37m'
+    printf -- "${line:${#dateString}}${dateString}"
     printf '\e[0m'
   fi
 }
