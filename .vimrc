@@ -112,7 +112,8 @@ syntax enable
 "let g:solarized_visibility="low"
 "let g:solarized_termtrans="1"
 let base16colorspace=256
-set background=dark
+let g:base16_hide_special=1
+set background=light
 colorscheme base16-default
 
 set linespace=0
@@ -129,10 +130,10 @@ set numberwidth=4
 " consistent background for git-gutter
 highlight clear SignColumn
 
-"set list
+set list
 set listchars=tab:▸\ ,trail:⋅,nbsp:⋅,eol:¬
-autocmd InsertEnter * set list
-autocmd InsertLeave * set nolist
+"autocmd InsertEnter * set list
+"autocmd InsertLeave * set nolist
 
 " Highlight trailing whitespace
 highlight link ExtraWhitespace CursorLine

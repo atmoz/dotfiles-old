@@ -12,4 +12,5 @@ xterm*faceName: DejaVu Sans Mono for Powerline
 xterm*faceSize: 9
 xterm*border: off
 xterm*borderWidth: 0
+xterm*fastScroll: true
 

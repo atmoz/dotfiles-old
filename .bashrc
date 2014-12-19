@@ -29,7 +29,7 @@ alias gpp='git pull && git push'
 
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.light.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 
@@ -51,31 +51,33 @@ dyellow="1;33"
 dpurple="1;35"
 dwhite="1;37"
 
-function color() {
+function __color() {
     echo "\[\e[${1}m\]${@:2}\[\e[m\]"
 }
+
+GIT_PS1_SHOWUPSTREAM="auto"
+#GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWCOLORHINTS=true
+source /usr/share/git/completion/git-prompt.sh
 
 function __ps1_newline_login {
   if [[ -z "${PS1_NEWLINE_LOGIN}" ]]; then
     PS1_NEWLINE_LOGIN=true
+
+    gitPsInfo='$(__git_ps1  "[%s] ")'
+    PS1="${PS1/\$/$gitPsInfo\$}"
   else
     #printf '\n'
     line=$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' '  '-')
     dateString="" # " $(date +"%F %T")"
-    printf '\e[0;90m'
+    printf '\e[0;37m'
     printf -- "${line:${#dateString}}${dateString}"
     printf '\e[0m'
   fi
 }
-PROMPT_COMMAND='__ps1_newline_login'
 
-source /usr/share/git/completion/git-prompt.sh
-#GIT_PS1_SHOWUPSTREAM="auto"
-#GIT_PS1_SHOWUNTRACKEDFILES=true
+ps1pc_start="$(__color $dblue '\w') "
+ps1pc_end='$(if [ ! \j == 0 ]; then echo "(\jj) "; fi)\$ '
+PROMPT_COMMAND='__ps1_newline_login && __git_ps1 "$ps1pc_start" "$ps1pc_end" "[%s]"'
 
-#PS1='[\u@\h \W]\$ '
-#PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
-#PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] $(__git_ps1 "[%s]") \n\[\e[1;32m\]\$\[\e[m\] '
-gitPsInfo='$(__git_ps1 " [%s]")'
-#PS1="\n$(color $dgreen [)$(color $blue '\w')$(color $green $gitPsInfo)$(color $dgreen ]) $(color $dgreen \$) "
-PS1="$(color $dblue '\w')$(color $green $gitPsInfo) \$ "
+
