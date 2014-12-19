@@ -1,7 +1,5 @@
 xrdb -merge .Xresources
+xsetroot -solid black &
 
-if (xrandr | grep "DVI-I-2" | grep " connected"); then
-    ~/bin/toggle-monitor external
-fi
-
+rm ~/.i3/i3log
 exec i3 --force-xinerama -V >>~/.i3/i3log 2>&1

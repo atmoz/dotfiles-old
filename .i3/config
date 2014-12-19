@@ -47,6 +47,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
+# monitor
+bindsym $mod+XF86LaunchA exec --no-startup-id bin/monitor/single
+bindsym $mod+Shift+XF86LaunchA exec --no-startup-id bin/monitor/presentation
+
 # apps
 set $dmenuOptions -nb "#000508" -nf "#839496" -sb "#002b36" -sf "#268bd2" -fn "DejaVu Sans Mono-10:normal" -i -b
 bindsym $mod+d exec --no-startup-id dmenu_run $dmenuOptions
@@ -181,13 +185,9 @@ client.unfocused        #000508 #000508 #839496 #839496
 ##  Startup apps
 ########################################################################################################
 
-exec --no-startup-id xrdb -merge .Xresources              # load .Xresources
 exec --no-startup-id ssh-agent                            # ssh-agent for remembering key passphrases
 exec --no-startup-id redshift -l 60.3:5.3 -m vidmode      # auto color temperature
 exec --no-startup-id wicd-client -t                       # network
 exec --no-startup-id thunar --daemon                      # faster thunar
-exec --no-startup-id xmenud --tray                        # application menu in tray
 exec --no-startup-id dropboxd                             # dropbox
 exec --no-startup-id xautolock -time 60 -locker "$locker" # lock screen when idle
-exec --no-startup-id dunst                                # notifications
-exec --no-startup-id /home/atmoz/bin/init-monitors.sh     # prepare monitors (and wallpaper)
