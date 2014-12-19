@@ -5,12 +5,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --group-directories-first -p'
 PS1='[\u@\h \W]\$ '
 
 set -o vi
 export EDITOR="vim"
 
+export PATH=$PATH:~/bin
+
+export GOPATH=~/workspace/go
+export PATH=$PATH:$GOPATH/bin
 
 # git magic
 alias gs='git s'
@@ -23,7 +27,6 @@ alias gam='git commit -am'
 alias gc='git checkout'
 alias gpp='git pull && git push'
 
-export PATH=$PATH:~/bin
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.light.sh"
