@@ -10,7 +10,7 @@ if [ ! -d "$targetDir" ]; then
     exit
 fi
 
-ignoreList="${3:-"$thisFile,.git,.gitmodules"}"
+ignoreList="${3:-"$thisFile,.git,.gitmodules,.gitignore"}"
 fileList="${2:-"$(ls -A "$sourceDir")"}"
 
 log=""
