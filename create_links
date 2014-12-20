@@ -1,0 +1,60 @@
+#!/bin/bash
+
+thisFile="$(basename "${BASH_SOURCE[0]}")"
+sourceDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+targetDir="${1:-$(realpath ~)}"
+
+if [ ! -d "$targetDir" ]; then
+    echo "$targetDir is not a directory."
+    exit
+fi
+
+ignoreList="${3:-"$thisFile,.git,.gitmodules"}"
+fileList="${2:-"$(ls -A "$sourceDir")"}"
+
+log=""
+function logFile() {
+    log="$log \n $1"
+}
+function logDetail() {
+    log="$log | $1"
+}
+function outputLog() {
+    echo "$(printf "$log" | column -t -s "|")"
+}
+
+function createLink() {
+    file="$1"
+    source="$sourceDir/$file"
+    target="$targetDir/$file"
+
+    logFile "$file"
+
+    if [ -L "$target" ]; then
+        logDetail "Already symlinked. Skipped."
+        return
+    fi
+
+    if [ -a "$target" ]; then
+        old="${target}.old"
+        renamed="Old file renamed to $(basename $old)."
+        mv "$target" "$old"
+    else
+        renamed=""
+    fi
+
+    logDetail "Symlinked. $renamed"
+    ln -s "$source" "$target"
+}
+
+
+for file in $fileList; do
+    case ,$ignoreList, in
+        *,$file,*) continue ;;
+    esac
+
+    createLink "$file"
+done
+
+outputLog
