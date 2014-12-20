@@ -172,7 +172,7 @@ let g:airline#extensions#whitespace#trailing_format = 't[%s]'
 let g:airline#extensions#whitespace#mixed_indent_format = 'i[%s]'
 
 " Fix glitch at startup
-autocmd VimEnter * AirlineRefresh
+"autocmd VimEnter * AirlineRefresh
 
 " ============================================================================
 " git-gutter

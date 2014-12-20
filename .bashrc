@@ -29,7 +29,7 @@ alias gpp='git pull && git push'
 
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.light.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 
@@ -61,8 +61,8 @@ function __ps1_newline_login {
   else
     #printf '\n'
     line=$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' '  '-')
-    dateString=" $(date +"%F %T")"
-    printf '\e[0;37m'
+    dateString="" # " $(date +"%F %T")"
+    printf '\e[0;90m'
     printf -- "${line:${#dateString}}${dateString}"
     printf '\e[0m'
   fi
