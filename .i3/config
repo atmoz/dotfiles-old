@@ -55,8 +55,8 @@ bindsym $mod+Shift+XF86LaunchA exec --no-startup-id bin/monitor/presentation
 set $dmenuOptions -nb "#000508" -nf "#839496" -sb "#002b36" -sf "#268bd2" -fn "DejaVu Sans Mono-10:normal" -i -b
 bindsym $mod+d exec --no-startup-id dmenu_run $dmenuOptions
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu $dmenuOptions'
-bindsym $mod+Return exec urxvtc
-bindsym $mod+Shift+Return exec surf
+bindsym $mod+Return exec uxterm
+bindsym $mod+Shift+Return exec thunar
 bindsym $mod+p exec --no-startup-id ~/bin/launch
 bindsym $mod+Shift+x exec $locker
 bindsym $mod+Shift+m exec --no-startup-id ~/bin/toggle-monitor.sh
