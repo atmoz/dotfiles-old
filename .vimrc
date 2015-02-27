@@ -208,8 +208,10 @@ let g:ctrlp_prompt_mappings = {
     \ }
 
 " ============================================================================
-" Smaller plugins
+" Other plugins
 " ============================================================================
+
+let g:NERDTreeQuitOnOpen = 1
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)

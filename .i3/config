@@ -168,16 +168,16 @@ bar {
         separator #073642
 
         # color class      border  backgr. text
-        focused_workspace  #002b36 #002b36 #2aa198
-        active_workspace   #002b36 #002b36 #fdf6e3
+        focused_workspace  #002b36 #002b36 #E3FDFD
+        active_workspace   #002b36 #002b36 #2aa198
         inactive_workspace #000508 #000508 #839496
         urgent_workspace   #800517 #800517 #cb4b16
     }
 }
 
 # decoration colors     border  backgr. text    indicator
-client.focused          #002b36 #002b36 #2aa198 #2aa198
-client.focused_inactive #000508 #000508 #fdf6e3 #fdf6e3
+client.focused          #002b36 #002b36 #E3FDFD #E3FDFD
+client.focused_inactive #002b36 #002b36 #2aa198 #2aa198
 client.unfocused        #000508 #000508 #839496 #839496
 
 
