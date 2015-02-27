@@ -77,7 +77,7 @@ function __ps1_newline_login {
 }
 
 ps1pc_start="$(__color $dblue '\w')"
-ps1pc_end='$(if [ ! \j == 0 ]; then echo "\[\e[1;31m\](\j)\[\e[m\] "; fi) \$ '
+ps1pc_end='$(if [ ! \j == 0 ]; then echo " \[\e[1;31m\](\j)\[\e[m\]"; fi) \$ '
 PROMPT_COMMAND='__ps1_newline_login && __git_ps1 "$ps1pc_start" "$ps1pc_end" ":%s"'
 
 
